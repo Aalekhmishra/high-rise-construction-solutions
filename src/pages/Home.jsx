@@ -8,15 +8,15 @@ import "./Home.css"
 
 
 /*Import Images here for the home page*/
-import myImage from "C:/Users/Aalekh/Desktop/HRCS Website/Gallery/Screenshot+2023-05-12+111233.png"
-import SecondImage from "C:/Users/Aalekh/Desktop/HRCS Website/Gallery/new-york-skyline-black-and-white-lucynakoch.jpg"
-import image1 from "C:/Users/Aalekh/Desktop/HRCS Website/Gallery/IMG_076.jpg";
-import image2 from "C:/Users/Aalekh/Desktop/HRCS Website/Gallery/IMG_3451.jpg";
-import image3 from "C:/Users/Aalekh/Desktop/HRCS Website/Gallery/unnamed.jpg"
-import image4 from "C:/Users/Aalekh/Desktop/HRCS Website/Gallery/IMG_4377.jpg"
-import image5 from "C:/Users/Aalekh/Desktop/HRCS Website/Gallery/_DSC3041.jpg"
-import image6 from "C:/Users/Aalekh/Desktop/HRCS Website/Gallery/IMG_8432.jpg"
-import image7 from "C:/Users/Aalekh/Desktop/HRCS Website/Gallery/Highrise+Logo+color+large.jpg"
+import myImage from "../assets/Gallery/Screenshot+2023-05-12+111233.png"
+import SecondImage from "../assets/Gallery/new-york-skyline-black-and-white-lucynakoch.jpg"
+import image1 from "../assets/Gallery/IMG_076.jpg";
+import image2 from "../assets/Gallery/IMG_3451.jpg";
+import image3 from "../assets/Gallery/unnamed.jpg";
+import image4 from "../assets/Gallery/IMG_4377.jpg";
+import image5 from "../assets/Gallery/_DSC3041.jpg";
+import image6 from "../assets/Gallery/IMG_8432.jpg";
+import image7 from "../assets/Gallery/Highrise+Logo+color+large.jpg"
 /* New Imports that i used and changes which are not working*/
 //import About from "./About.jsx"; 
 // import "./ImageWithTextOverlay.css"

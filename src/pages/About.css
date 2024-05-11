@@ -1,0 +1,28 @@
+.heading1{
+    color: cyan;
+    text-align: center;
+    
+}
+
+.heading2 {
+    color: red;
+    text-align: left;
+    
+}
+
+.heading3{
+    color: red;
+    text-align: left;
+}
+
+.description1{ 
+    text-align: left;
+    /* height: ; */
+    /* width: ; */
+}
+
+.description2{ 
+    text-align: left;
+    /* height: 125px ; */
+    /* width: 100px ; */
+}

@@ -5,7 +5,6 @@ import {Routes, Route} from 'react-router-dom';
 
 /*Import the css components here*/
 import './App.css';
-import './Gallery.css'; 
 
 // Import your pages file for styling
 import Home from './pages/Home';

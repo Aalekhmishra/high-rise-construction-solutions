@@ -1,5 +1,9 @@
 import React from 'react';
 import "./Research.css"
+import PageLayout from '../components/PageLayout';
+
+
+
 function Research() {
   return (
     <div>
@@ -35,4 +39,4 @@ function Research() {
   );
 }
 
-export default Research;
+export default PageLayout()(Research);

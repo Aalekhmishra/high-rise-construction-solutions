@@ -1,5 +1,8 @@
 import React from 'react';
 import "./About.css"
+import PageLayout from '../components/PageLayout';
+
+
 function About() {
   return (
     <div>
@@ -35,4 +38,4 @@ function About() {
   );
 }
 
-export default About;
+export default PageLayout()(About);

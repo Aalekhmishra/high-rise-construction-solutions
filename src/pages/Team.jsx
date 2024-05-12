@@ -1,5 +1,8 @@
 import React from 'react';
 import "./Team.css"
+import PageLayout from '../components/PageLayout';
+
+
 function Team() {
   return (
     <div>
@@ -34,4 +37,4 @@ function Team() {
   );
 }
 
-export default Team;
+export default PageLayout()(Team);

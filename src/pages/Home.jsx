@@ -17,6 +17,7 @@ import image4 from "../assets/Gallery/IMG_4377.jpg";
 import image5 from "../assets/Gallery/_DSC3041.jpg";
 import image6 from "../assets/Gallery/IMG_8432.jpg";
 import image7 from "../assets/Gallery/Highrise+Logo+color+large.jpg"
+import PageLayout from '../components/PageLayout';
 /* New Imports that i used and changes which are not working*/
 //import About from "./About.jsx"; 
 // import "./ImageWithTextOverlay.css"
@@ -65,4 +66,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default PageLayout()(Home);

@@ -1,5 +1,7 @@
 import React from 'react';
 import "./Services.css"
+import PageLayout from '../components/PageLayout';
+
 function Services() {
   return (
     <div>
@@ -35,4 +37,4 @@ function Services() {
   );
 }
 
-export default Services;
+export default PageLayout()(Services);

@@ -13,10 +13,6 @@ import Team from './pages/Team';
 import Services from './pages/Services';
 import Projects from './pages/Projects';
 import Research from './pages/Research';
-//import { Footer } from './components/Footer';
-//import { Header } from './components/Header';
-
-
 
 
 function App() {

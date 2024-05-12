@@ -1,5 +1,7 @@
 import React from 'react';
 import "./Projects.css"
+import PageLayout from '../components/PageLayout';
+
 function Projects() {
   return (
     <div>
@@ -35,4 +37,4 @@ function Projects() {
   );
 }
 
-export default Projects;
+export default PageLayout()(Projects);

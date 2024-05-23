@@ -1,12 +1,21 @@
-import { AppBar, Box, Button, IconButton, Toolbar, Link, Drawer } from "@mui/material";
+import { AppBar, Box, Button, IconButton, Toolbar, Link, Drawer, useTheme, styled } from "@mui/material";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import companyLogo from "../assets/Gallery/Highrise+Logo+color+large.jpg"
-import { LinkedIn, Menu as MenuIcon } from "@mui/icons-material";
+import { DarkModeRounded, LightModeOutlined, LinkedIn, Menu as MenuIcon } from "@mui/icons-material";
+import { useThemeToggle } from "../ThemeProvider";
 
-const white = "#fff";
+const CustomLink = styled(Link)(({ theme })=>({
+  color: theme.palette.mode === "light" ? "#000" : "#fff",
+}))
+const Logo = styled('img')({
+  height: 80,
+  width: 120
+});
 
 export function  Header(){
+  const theme = useTheme();
+  const toggelTheme = useThemeToggle();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   console.log("isMobile", isMobileMenuOpen);
@@ -20,7 +29,12 @@ export function  Header(){
     return (
       <>
         <Box sx={{flexGrow: 1}} height={"8rem"}>
-          <AppBar position="static" sx={{ bgcolor: white}} >
+          <AppBar 
+            position="static" 
+            sx={{ 
+              bgcolor: theme.palette.mode === 'light' ? "#FFF": "#000",
+            }}
+          >
             <Toolbar> 
               <img 
                 src={companyLogo}
@@ -36,6 +50,13 @@ export function  Header(){
                   <MenuIcon />
                 </IconButton>
               </Box>
+              {/* <Box sx={{display: { xs: "block", sm: "block", md: 'none'}}}> */}
+              <IconButton 
+                  onClick={toggelTheme}
+                >
+                  {theme.palette.mode === 'light' ? <DarkModeRounded /> : <LightModeOutlined />}
+                </IconButton>
+              {/* </Box> */}
               {!isMobileMenuOpen && AllMenus(navigate)}
               
             </Toolbar>
@@ -62,7 +83,9 @@ export function  Header(){
 
 const NavItem = ({ title, onclick }) => {
   return (
-    <Link onClick={onclick} underline="hover" sx={{paddingX: "2rem", cursor: 'pointer'}}>{title}</Link>
+    <CustomLink onClick={onclick} underline="hover" sx={{paddingX: "2rem", cursor: 'pointer'}}>
+      {title}
+    </CustomLink>
   )
 }
 

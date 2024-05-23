@@ -1,4 +1,4 @@
-import { Box, Grid, Paper, Typography, styled } from "@mui/material";
+import { Box, Grid, Paper, Typography, styled, useTheme } from "@mui/material";
 import React from "react";
 import Map from "./Map";
 
@@ -11,9 +11,20 @@ const Item = styled(Paper)(({theme})=>({
 }))
 
 export function  Footer(){
+    const theme = useTheme();
+
     return (
         <>
-            <Box sx={{ flexGrow: 1, padding: { xs: '5px', md: '40px 20px'}}}>
+            <Box 
+                sx={{ 
+                    flexGrow: 1, 
+                    padding: {
+                         xs: '5px', 
+                         md: '40px 20px'
+                    },
+                    bgcolor: theme.palette.mode === 'light' ? "#FFF": "#000",
+                }}
+            >
                 <Grid container spacing={{ xs: 2, md: 3}} columns={{ xs: 4, md:12}}>
                     <Grid item xs={4}>
                         <Item sx={{height: {xs: '100%', md: '20rem'}, }}>

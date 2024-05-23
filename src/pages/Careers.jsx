@@ -21,9 +21,15 @@ function Projects() {
 
         Other specialty projects in the New York/ New Jersey Area.</p>
         <h2>Our Mission</h2>
-        <p>NY VUE
-100 Chosin Few Way Bayonne, NJ 
-Highrise Construction Solutions Inc. is contracted for a 26-story residential tower building ground up construction project. 377,569 SF Building with 281 Apartment Units along with six- level parking garage with a total of 566 parking space. </p>
+        <p>• Providing high quality workmanship and customer service. 
+
+           • Maintaining professionalism and honesty in our relationships with clients, vendors and subcontractors. 
+
+           • Critically applying sound project management principles to coordinate day to day activities. 
+
+           • Bringing experienced subcontractors to each project with a shared goal of delivering work ahead of schedule and under budget. 
+
+           • Creating a safe and productive work environment. satisfaction.</p>
 
            <h2>Meet the Team</h2>
            

@@ -1,38 +1,60 @@
-import { AppBar, Box, Button, IconButton, Menu, Toolbar, Link } from "@mui/material";
-import React from "react";
+import { AppBar, Box, Button, IconButton, Toolbar, Link, Drawer } from "@mui/material";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import companyLogo from "../assets/Gallery/Highrise+Logo+color+large.jpg"
+import { LinkedIn, Menu as MenuIcon } from "@mui/icons-material";
 
 const white = "#fff";
 
 export function  Header(){
-    const navigate = useNavigate()
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  console.log("isMobile", isMobileMenuOpen);
+    const navigate = useNavigate();
+    const handleMenuMobileOpen=()=>{
+      setIsMobileMenuOpen(true);
+    }
+    const handleMenuMobileClose=()=>{
+      setIsMobileMenuOpen(false)
+    }
     return (
       <>
-        <Box height={"8rem"}>
+        <Box sx={{flexGrow: 1}} height={"8rem"}>
           <AppBar position="static" sx={{ bgcolor: white}} >
             <Toolbar> 
               <img 
                 src={companyLogo}
                 className="logo "
                 alt="Company logo"
+                sx={{
+                  display: { xs: "none", md: "block"},
+                }}
               />
-              <Box sx={{ display: { xs: "block", sm: "none"}}}>
-                <IconButton color="inherit">
-                  <Menu />
+              <Box sx={{flexGrow: 1}} />
+              <Box sx={{ display: { xs: "block", sm: "block", md: 'none'}}}>
+                <IconButton color="#000" bgcolor={'red'} onClick={handleMenuMobileOpen}>
+                  <MenuIcon />
                 </IconButton>
               </Box>
-              <Box sx={{flexGrow: 1}} />
-              <Box sx={{ display: "flex"}}>
-                <NavItem title={"Home"} onclick={()=>navigate("/")} />
-                <NavItem title={"About"} onclick={()=>navigate("/about")} />
-                <NavItem title={"Projects"} onclick={()=>navigate("/projects")} />
-                <NavItem title={"Careers"} onclick={()=>navigate("/careers")} />
-                <NavItem title={"Our Services"} onclick={()=>navigate("/services")} />
-                <NavItem title={"Research"} onclick={()=>navigate("/research")} />
-              </Box>
+              {!isMobileMenuOpen && AllMenus(navigate)}
+              
             </Toolbar>
           </AppBar>
+              {
+                <Drawer
+                  open={isMobileMenuOpen}
+                  onClose={handleMenuMobileClose}
+
+                >
+                  <Box
+                    sx={{
+
+                    }}
+                  >
+                    {allMenusForMobile(navigate)}
+                  </Box>
+                </Drawer>
+              }
         </Box>      
       </>
     )
@@ -44,19 +66,92 @@ const NavItem = ({ title, onclick }) => {
   )
 }
 
+const AllMenus = (navigate) =>{
+  return (
+    <Box 
+      sx={{ 
+        display: {xs: "none", md: 'flex'}, 
+        flexDirection: 'row',
+        alignContent: 'center',
+        alignItems: 'center',
+        padding: "2rem"
+      }}
+    >
+                <NavItem title={"Home"} onclick={()=>navigate("/")} />
+                <NavItem title={"About"} onclick={()=>navigate("/about")} />
+                <NavItem title={"Projects"} onclick={()=>navigate("/projects")} />
+                <NavItem title={"Careers"} onclick={()=>navigate("/careers")} />
+                <NavItem title={"Our Services"} onclick={()=>navigate("/services")} />
+                <NavItem title={"Research"} onclick={()=>navigate("/research")} />
+                <IconButton 
+                  component="a" 
+                  href="https://www.linkedin.com/company/highrise-construction-solutions/about/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="https://www.linkedin.com/company/highrise-construction-solutions/about/"
+                  sx={{
+                    margin: '0 10px',
+                    color: '#000',
+                    svg: {
+                      fontSize: '3.5rem',
+                    }
+                  }}
+                >
+                    <LinkedIn  />
+                </IconButton>
+                <Button 
+                  variant="contained" 
+                  href="mailto:office@hill21construction.com"
+                  sx={{
+                    height: '60px',
+                    bgcolor: 'black',
+                  }}
+                >Contact Us</Button>
+              </Box>
+  )
+}
 
-//   <div>Header File
-//   <Button variant="text">Home </Button>
-//   {/*Buttone For About*/ }
-// <Button variant="text" onClick={() => navigate("/about")}>About</Button>
-//   {/*Buttone For Careers*/ }
-// <Button variant="text">Careers</Button>
-//   {/*Buttone For Projects*/ }
-// <Button variant="text">Projects</Button>
-//   {/*Buttone For Services*/ }
-// <Button variant="text">Our Services</Button>
-//   {/*Buttone For Contact us*/ }
-// <Button variant="text">Contact Us</Button>
-//   { /*Buttone For Research*/ }
-// <Button variant="text">Research</Button>
-//   </div>
+const allMenusForMobile = (navigate) =>{
+  return (
+    <Box 
+      sx={{ 
+        display: {xs: "flex", md: 'none'}, 
+        flexDirection: 'column',
+        alignContent: 'center',
+        alignItems: 'center',
+        padding: ".5rem"
+      }}
+    >
+                <NavItem title={"Home"} onclick={()=>navigate("/")} />
+                <NavItem title={"About"} onclick={()=>navigate("/about")} />
+                <NavItem title={"Projects"} onclick={()=>navigate("/projects")} />
+                <NavItem title={"Careers"} onclick={()=>navigate("/careers")} />
+                <NavItem title={"Our Services"} onclick={()=>navigate("/services")} />
+                <NavItem title={"Research"} onclick={()=>navigate("/research")} />
+                <IconButton 
+                  component="a" 
+                  href="https://www.linkedin.com/company/highrise-construction-solutions/about/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="https://www.linkedin.com/company/highrise-construction-solutions/about/"
+                  sx={{
+                    margin: '0 10px',
+                    color: '#000',
+                    svg: {
+                      fontSize: '3.5rem',
+                    }
+                  }}
+                >
+                    <LinkedIn  />
+                </IconButton>
+                <Button 
+                  variant="contained" 
+                  href="mailto:office@hill21construction.com"
+                  sx={{
+                    height: '60px',
+                    bgcolor: 'black',
+                  }}
+                >Contact Us</Button>
+              </Box>
+  )
+}

@@ -18,27 +18,23 @@ import image5 from "../assets/Gallery/_DSC3041.jpg";
 import image6 from "../assets/Gallery/IMG_8432.jpg";
 import image7 from "../assets/Gallery/Highrise+Logo+color+large.jpg"
 import PageLayout from '../components/PageLayout';
+import Hero from '../components/View/Hero';
 /* New Imports that i used and changes which are not working*/
-//import About from "./About.jsx"; 
-// import "./ImageWithTextOverlay.css"
 
 
 
 function Home() {
-//const [showAbout, setShowAbout]=useState(false);
-
 
   return (
     
    <div>
-    {/* Logo for the site */}
-    <img src={image7} alt="Image 7" /> 
-      <h1>High Rise Construction Solutions</h1>
-      <h2>Serving the Metropolitan area since 2018</h2>
+    <Hero image_url={SecondImage}/>
+      {/* <h1>High Rise Construction Solutions</h1>
+      <h2>Serving the Metropolitan area since 2018</h2> */}
       {/* /*Image of the New York Skyline view*/ }
-      <img src={myImage} alt="Description of the image" />
+      {/* <img src={myImage} alt="Description of the image" /> */}
       {/* Image of the team of HRCS */}
-      <img src={SecondImage} alt="Description of the image" />
+      {/* <img src={SecondImage} alt="Description of the image" /> */}
       <h3>About Us</h3>
       <p>We are Construction Company with over 25 years of experience in the Construction Management 
         and General Contracting domain. Our extensive experience, professionally skilled and eager staff and 
@@ -50,18 +46,18 @@ function Home() {
         but not limited to Ground-Up Construction, Design-Build, Remodels and Renovations, Period Restorations,
         Hardscape/ Landscape, and other specialty projects in the New York/ New Jersey Area. Our team is dedicated to the 
         highest standards of professionalism and client satisfaction</p>
-         <div className="gallery-container">
+         {/* <div className="gallery-container">
          <div className="image-scroll">
         {/* Gallery Images */}
-        <img src={image1} alt="Image 1" />
+        {/* <img src={image1} alt="Image 1" />
         <img src={image2} alt="Image 2" />
         <img src={image3} alt="Image 3" />
         <img src={image4} alt="Image 4" />
         <img src={image5} alt="Image 5" />
-        <img src={image6} alt="Image 6" /> 
+        <img src={image6} alt="Image 6" />  */}
         {/* Add more images as needed */}
-      </div>
-    </div>
+      {/* </div> */}
+    {/* </div> */}
     </div>
   );
 }

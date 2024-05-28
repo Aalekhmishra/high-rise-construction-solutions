@@ -1,38 +1,33 @@
 import React from 'react';
 import "./Research.css"
+import PageLayout from '../components/PageLayout';
+import JunedImage from "../assets/Gallery/research/juned.jpg";
+import SecondImage from "../assets/Gallery/research/secondImg.png";
+import { Typography, useTheme } from '@mui/material';
+import CustomCardResearch from '../components/cards/research/CustomCardResearch';
+
 function Research() {
+  const theme = useTheme();
   return (
-    <div>
-      <h1>Research Page</h1>
-      <h2>Who We Are</h2>
-      <p>Highrise Construction Solutions Inc. is a Construction Company with over 25 years of experience in the Construction Management and General Contracting domain. Our extensive experience, professionally skilled and eager staff and our unwavering commitment to excellence enables us to deliver high quality projects on time and monitoring the budget within set constraints. HRCS collaborates with Homeowners, Developers, Architects, Designers, and Engineers to schedule and put together all phases of the Construction Process. Our team is dedicated to the highest standards of professionalism and client satisfaction. We offer Construction Management and Consulting Services for Residential and Commercial Construction projects; including but not limited to:
+   <>
+   <Typography variant="h4" color={theme.palette.mode === 'light' ? "#000": "#fff"} p={10} sx={{fontSize: "500"}} align='center'>
+   Our efforts to develop efficient construction management systems by leveraging modern LLM technology.
+   </Typography>
+      <CustomCardResearch
+        title={""} 
+        description={`The construction industry is known for its slow adaptation to the Industrial Revolution 4.0. This revolution refers to using AI techniques in the construction management process. However, it can be assumed that the development of such software will be introduced in the next decade because of the dramatic enhancement of AI systems. High Rise Construction Solutions tends to dedicate its effort to pushing the conventional boundaries of management systems. Our research showcases experimental outcomes of using large language models on construction drawings of various sizes. 
 
-        Ground-Up Construction
-
-        Design-Build
-
-        Remodels and Renovations
-
-        Period Restorations
-
-        Hardscape/ Landscape
-
-        Other specialty projects in the New York/ New Jersey Area.</p>
-        <h2>Our Mission</h2>
-        <p>• Providing high quality workmanship and customer service. 
-
-           • Maintaining professionalism and honesty in our relationships with clients, vendors and subcontractors. 
-
-           • Critically applying sound project management principles to coordinate day to day activities. 
-
-           • Bringing experienced subcontractors to each project with a shared goal of delivering work ahead of schedule and under budget. 
-
-           • Creating a safe and productive work environment. satisfaction.</p>
-
-           <h2>Meet the Team</h2>
-           
-    </div>
+        Infrastructure development is a significant societal aspect involving manual and redundant tasks. As construction is a delicate process, the management team collaborates with multiple authorities, such as the municipal corporation, fire department, owners, stakeholders, and most notably, the design team. To ensure the process is followed based on the building codes specific to the location and specified by the Municipal Corporation guidelines, there is a constant interaction between the design team and the contractor. Unfortunately,  big projects have a greater scope for mistakes, and these contingencies must be addressed per the building codes. `} 
+        image_url={JunedImage} 
+      />
+      <CustomCardResearch 
+        title={""} 
+        description={"The drawings and the sequence are updated regularly to ensure that after the project, the contractor can provide the owner with accurate drawings for the entire superstructure. Large Language Models can perform these redundant tasks with proper training, logic implementation, and prompt engineering methods. Through this research, High Rise Construction Solutions will attempt to dive into the cardinal aspects of construction automation using machine learning, RAG, Vector databases, and other available resources to deploy robust software for construction management. Generative AI has a huge potential to make redundant processes such as estimating take-offs, creating proposals, and tracking inventory."} 
+        image_url={SecondImage} 
+        directionImage={'row-reverse'}
+      />
+   </>
   );
 }
 
-export default Research;
+export default PageLayout()(Research);

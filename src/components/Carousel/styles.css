@@ -1,0 +1,20 @@
+.slider {
+  overflow: "hidden";
+  padding: 2rem 0;
+}
+  
+.slider img {
+  width: 100%;
+}
+/* carouselStyles.css */
+.custom-carousel-item {
+  margin: 0;
+  padding: 0;
+}
+  
+.custom-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  

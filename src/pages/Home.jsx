@@ -8,27 +8,21 @@ import "./Home.css"
 
 
 /*Import Images here for the home page*/
-import myImage from "../assets/Gallery/Screenshot+2023-05-12+111233.png"
 import SecondImage from "../assets/Gallery/new-york-skyline-black-and-white-lucynakoch.jpg"
-import image1 from "../assets/Gallery/IMG_076.jpg";
-import image2 from "../assets/Gallery/IMG_3451.jpg";
-import image3 from "../assets/Gallery/unnamed.jpg";
-import image4 from "../assets/Gallery/IMG_4377.jpg";
-import image5 from "../assets/Gallery/_DSC3041.jpg";
-import image6 from "../assets/Gallery/IMG_8432.jpg";
-import image7 from "../assets/Gallery/Highrise+Logo+color+large.jpg"
 import PageLayout from '../components/PageLayout';
 import Hero from '../components/View/Hero';
+import Slider from '../components/Slider';
 /* New Imports that i used and changes which are not working*/
 
 
 
 function Home() {
-
+  
   return (
     
    <div>
     <Hero image_url={SecondImage}/>
+    <Slider />
       {/* <h1>High Rise Construction Solutions</h1>
       <h2>Serving the Metropolitan area since 2018</h2> */}
       {/* /*Image of the New York Skyline view*/ }

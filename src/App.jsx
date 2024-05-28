@@ -1,5 +1,5 @@
 /*Import react dependecies here*/
-import   React from 'react';
+import   React, { useState } from 'react';
 import {Routes, Route} from 'react-router-dom';
 
 
@@ -16,13 +16,13 @@ import Research from './pages/Research';
 
 
 function App() {
-
+  const [a, setA] = useState("A");
 
   return (
     <>
     
       <Routes>
-          <Route path='/' element={<Home />}/>
+          <Route path='/' element={<Home a={a} setA={setA} />}/>
           <Route path='/about' element={<About />}/>
           <Route path='/team' element={<Team />}/>
           <Route path='/services' element={<Services />}/>

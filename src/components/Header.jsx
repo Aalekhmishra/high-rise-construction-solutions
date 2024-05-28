@@ -28,7 +28,7 @@ export function  Header(){
     }
     return (
       <>
-        <Box sx={{flexGrow: 1}} height={"8rem"}>
+        <Box component={'div'} sx={{flexGrow: 1}} height={"8rem"}>
           <AppBar 
             position="static" 
             sx={{ 

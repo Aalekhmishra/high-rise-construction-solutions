@@ -1,12 +1,13 @@
 import { Typography, useTheme } from "@mui/material";
-import HeroLayout from "./HeroLayout";
+import CareerHeroLayout from "./CareerHeroLayout";
 
 
-export default function Hero(props) {
+
+export default function CareerHero(props) {
     const theme = useTheme();
 
     return (
-        <HeroLayout 
+        <CareerHeroLayout 
             sxBackground={{
                 backgroundImage: `url(${props.image_url})`,
                 backgroundColor: "#7fc7d9",
@@ -18,7 +19,7 @@ export default function Hero(props) {
                 align="center" 
                 variant="h2" 
             >
-                High Rise Construction Solutions
+                Want to join the team?
             </Typography>
             <Typography 
                 color={"#FFF"} 
@@ -27,9 +28,12 @@ export default function Hero(props) {
                 sx={{
                     mb: 4, mt: { xs: 4, sm: 10 }
                 }}
-            >
-                Serving the Metropolitan area since 2018
+            >   HRCS is always looking for candidates who are mission-focused, 
+                career driven and looking to make a career within the construction industry. 
+                Want to join a company where you can see your hard work rise. 
+                Please submit your resume to hr@hill21construction.com and in subject line 
+                state “interested candidate from website”. 
             </Typography>
-        </HeroLayout>
+        </CareerHeroLayout>
     )
 }

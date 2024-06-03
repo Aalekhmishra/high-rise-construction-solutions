@@ -1,9 +1,30 @@
-import { Box } from '@mui/material';
+import { Box, IconButton } from '@mui/material';
 import React from 'react'
-import Carousel from 'react-multi-carousel';
-import "react-multi-carousel/lib/styles.css";
 import companyLogo from "../assets/Gallery/Highrise+Logo+color+large.jpg";
 import JunedImage from "../assets/Gallery/juned.jpg";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import { West } from '@mui/icons-material';
+
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1
+  }
+};
 
 
 const sliderImagesList = [
@@ -15,24 +36,38 @@ const sliderImagesList = [
     {url: JunedImage},
 ]
 
-const responsive = {
-    desktop: {
-        breakpoint: {max: 3000, min: 1024},
-        items: 4,
-        slidesToSlide: 1,
-    },
-    tablet: {
-        breakpoint: {max: 1023, min: 768},
-        items: 3,
-        slidesToSlide: 1,
-    },
-    mobile: {
-        breakpoint: {max: 767, min: 464},
-        items: 1,
-        slidesToSlide: 1,
-    }
-}
+
 const Slider = () => {
+  const CustomLeftButton = ({ onClick }) => (
+    <IconButton
+      sx={{
+        color: 'red',
+        background: "transparent",
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+      }}
+      onClick={onClick}
+    >
+      <West />
+    </IconButton>
+  );
+  const CustomRightButton = ({ onClick }) => (
+    <IconButton
+      sx={{
+        transform: 'rotate(180deg)',
+        transition: 'transform 0.3s ease-in-out', //smooth transition
+        color: 'red',
+        background: "transparent",
+        position: 'absolute',
+        bottom: 0,
+        left: 40,
+      }}
+      onClick={onClick}
+    >
+      <West />
+    </IconButton>
+  );
   return (
     <Box sx={{px: {xs: 2, md: 5}}}>
         <Carousel
@@ -41,8 +76,10 @@ const Slider = () => {
             swipeable={false}
             draggable={false}
             showDots={false}
-            infinite={false}
+            infinite={true}
             partialVisbile={false}
+            customRightArrow={<CustomRightButton />}
+            customLeftArrow={<CustomLeftButton />}
         >
             { sliderImagesList.map((image, index) => {
                 return (
@@ -60,6 +97,12 @@ const Slider = () => {
                 )
             }) }
         </Carousel>
+        {/* <Carousel responsive={responsive}>
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+  <div>Item 4</div>
+</Carousel>; */}
     </Box>
   )
 }
